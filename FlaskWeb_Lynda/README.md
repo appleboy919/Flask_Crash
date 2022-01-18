@@ -13,3 +13,9 @@
     - No database help --> have to write custom SQL
 
 ==> **How much do I value customizing the project exactly how I like it?**
+
+
+### Technologies
+- Python
+- Pip
+- Basic HTML
