@@ -38,3 +38,17 @@
     def home():
         print("Hello Flask!")
     ```
+
+### Running Flask App on Terminal
+    - Run Flask APP on terminal
+        ```
+        >>> export FLASK_APP=[NAME_OF_CODEFILE]
+        >>> flask run
+        ```
+    - run Flask App in a devleopment environment
+        - don't need to restart the server when making a change in the code
+            ```
+            >>> export FLASK_APP=hello
+            >>> export FLASK_ENV=development
+            >>> flask run
+            ```
