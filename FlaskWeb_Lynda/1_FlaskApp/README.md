@@ -54,4 +54,21 @@
             ```
 
 ### Page Templates with Jinja
-    - 
+    - Use _Template_ to store all the data in a separate HTML file (just need to load)
+    - Using page templates:
+        1. create a template HTML file in a file directory _templates_
+        2. fill in the page templates
+            ```HTML
+            <h1>This is Home</h1>
+            ```
+        3. use _render_template()_ function to load the page template
+            ```python
+            from flask import Flask, render_template
+
+            app = Flask(__name__)
+
+            @app.route('/')
+            def home():
+                return render_template('home.html')
+            ```
+            ![home_render](/home.png)
