@@ -75,4 +75,15 @@
 - _Jinja_ Template:
     - allows Python-similar codes to be rendered as HTML document
     - reference: https://jinja.palletsprojects.com/en/3.0.x/
+    - Ex) passing variables: use **{{ }}**
+        ```python
+        ...
+            return render_template('home.html', name='David')
+        ```
+        ```html
+        <h1>This is home</h1>
+
+        <h2>{{ name }}</h2>
+        ```
+        ![Jinja_Variable](jinja_variable.png)
 
