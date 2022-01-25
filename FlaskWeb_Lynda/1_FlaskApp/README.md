@@ -40,35 +40,39 @@
     ```
 
 ### Running Flask App on Terminal
-    - Run Flask APP on terminal
-        ```
-        >>> export FLASK_APP=[NAME_OF_CODEFILE]
-        >>> flask run
-        ```
-    - run Flask App in a devleopment environment
-        - don't need to restart the server when making a change in the code
-            ```
-            >>> export FLASK_APP=hello
-            >>> export FLASK_ENV=development
-            >>> flask run
-            ```
+- Run Flask APP on terminal
+    ```
+    >>> export FLASK_APP=[NAME_OF_CODEFILE]
+    >>> flask run
+    ```
+- Run Flask App in a devleopment environment
+    ```
+    >>> export FLASK_APP=hello
+    >>> export FLASK_ENV=development
+    >>> flask run
+    ```
+    - No need to restart the server when making a change in the code
 
 ### Page Templates with Jinja
-    - Use _Template_ to store all the data in a separate HTML file (just need to load)
-    - Using page templates:
-        1. create a template HTML file in a file directory _templates_
-        2. fill in the page templates
-            ```HTML
-            <h1>This is Home</h1>
-            ```
-        3. use _render_template()_ function to load the page template
-            ```python
-            from flask import Flask, render_template
+- Use _Template_ to store all the data in a separate HTML file (just need to load)
+- Using page templates:
+    1. create a template HTML file in a file directory _templates_
+    2. fill in the page templates
+        ```html
+        <h1>This is Home</h1>
+        ```
+    3. use _render_template()_ function to load the page template
+        ```python
+        from flask import Flask, render_template
 
-            app = Flask(__name__)
+        app = Flask(__name__)
 
-            @app.route('/')
-            def home():
-                return render_template('home.html')
-            ```
-            ![home_render](/home.png)
+        @app.route('/')
+        def home():
+            return render_template('home.html')
+        ```
+        ![home_render](home.png)
+- _Jinja_ Template:
+    - allows Python-similar codes to be rendered as HTML document
+    - reference: https://jinja.palletsprojects.com/en/3.0.x/
+
