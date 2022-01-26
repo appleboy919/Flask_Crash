@@ -125,8 +125,8 @@
     ![Get_Request](get_request.png)
     ==> **Get Request**
 
-- Pass form variables to other routes
-    - create new route
+- Pass _form variables_ to other routes
+    - Create new route
         - use _request_ to access information from the reqeust
         - _request.args_ is a dictionary for different parameters (ex. args['code']) 
         ```python
@@ -138,6 +138,9 @@
         def shorten():
             return render_template('your_url.html', code=request.args['code'])
         ```
+    - Create a new HTML file for the new route with the _form variable_
+        ```html
+        <h1>Your URL</h1>
 
-
-### Pas
+        <h2>{{ code }}</h2>
+        ```
