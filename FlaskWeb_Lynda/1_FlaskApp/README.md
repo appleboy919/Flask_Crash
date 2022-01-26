@@ -87,7 +87,7 @@
         ```
         ![Jinja_Variable](jinja_variable.png)
 
-### Passing data with forms
+### Passing data with forms - _Get_ Request
 - Use _form_ tag to pass data
     - Set up a form with each input and a submit button
         ```html
@@ -110,7 +110,6 @@
             <input type="submit" value="Shorten">
         </form>
         ```
-<<<<<<< HEAD
         ![Form_2](form2.png)
     - Add _required_ keyword for each input
         ```html
@@ -120,6 +119,8 @@
         <input type="text" name="code" value="" required>
         ```
         ![Form_3](form3.png)
-=======
-        ![Form_2](form2.png)
->>>>>>> ff2c3620c39da0493efb32909b89aa841e171b22
+
+- Correct Submission:
+    ![Correct_Input](correct_input.png)
+    ![Get_Request](get_request.png)
+    ==> **Get Request**
