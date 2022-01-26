@@ -89,10 +89,13 @@
 
 ### Passing data with forms
 - Use _form_ tag to pass data
-    ```html
-    <form action="your-url">
-        <input type="url" name="url" value="">
-        <input type="text" name="code" value="">
-        <input type="submit" value="Shorten">
-    </form>
-    ```
+    - Set up a form with each input and a submit button
+        ```html
+        <form action="your-url">
+            <input type="url" name="url" value="">
+            <input type="text" name="code" value="">
+            <input type="submit" value="Shorten">
+        </form>
+        ```
+        ![Form_1](form1.png)
+    - 
