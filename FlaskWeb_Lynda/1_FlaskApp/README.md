@@ -110,6 +110,7 @@
             <input type="submit" value="Shorten">
         </form>
         ```
+<<<<<<< HEAD
         ![Form_2](form2.png)
     - Add _required_ keyword for each input
         ```html
@@ -119,3 +120,6 @@
         <input type="text" name="code" value="" required>
         ```
         ![Form_3](form3.png)
+=======
+        ![Form_2](form2.png)
+>>>>>>> ff2c3620c39da0493efb32909b89aa841e171b22
