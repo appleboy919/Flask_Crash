@@ -98,4 +98,16 @@
         </form>
         ```
         ![Form_1](form1.png)
-    - 
+    - Add labels for user-friendly design
+        ```html
+        <form action="your-url">
+            <label for="url">Website URL</label>
+            <input type="url" name="url" value="">
+            <br>
+            <label for="code">Short Name</label>
+            <input type="text" name="code" value="">
+            <br>
+            <input type="submit" value="Shorten">
+        </form>
+        ```
+        ![Form_2](form2.png)
