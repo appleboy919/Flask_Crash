@@ -124,3 +124,20 @@
     ![Correct_Input](correct_input.png)
     ![Get_Request](get_request.png)
     ==> **Get Request**
+
+- Pass form variables to other routes
+    - create new route
+        - use _request_ to access information from the reqeust
+        - _request.args_ is a dictionary for different parameters (ex. args['code']) 
+        ```python
+        from flask import Flask, render_template, request
+
+        ...
+
+        @app.route('/your-url')
+        def shorten():
+            return render_template('your_url.html', code=request.args['code'])
+        ```
+
+
+### Pas
