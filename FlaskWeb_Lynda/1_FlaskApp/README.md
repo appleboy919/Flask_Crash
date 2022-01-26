@@ -138,7 +138,7 @@
         def shorten():
             return render_template('your_url.html', code=request.args['code'])
         ```
-    - Create a new HTML file for the new route with the _form variable_
+    - Create a new HTML file for the new route with _Jinja_
         ```html
         <h1>Your URL</h1>
 
