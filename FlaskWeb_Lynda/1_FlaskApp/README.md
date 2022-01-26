@@ -87,3 +87,12 @@
         ```
         ![Jinja_Variable](jinja_variable.png)
 
+### Passing data with forms
+- Use _form_ tag to pass data
+    ```html
+    <form action="your-url">
+        <input type="url" name="url" value="">
+        <input type="text" name="code" value="">
+        <input type="submit" value="Shorten">
+    </form>
+    ```
