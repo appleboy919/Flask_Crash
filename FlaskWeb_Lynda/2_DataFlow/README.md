@@ -40,3 +40,4 @@
         with open('url.json', 'w') as url_file:
             json.dump(urls, url_file)
     ```
+    ![JSON1](json_file1.png)
