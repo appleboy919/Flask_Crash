@@ -173,8 +173,8 @@
                 else:
                     return 'This is not valid'
             ```
+        - Post Request:
             ![PostRequest](post_request.png)
-                - Post request is made
-
+            
+        - After entering the url again, a **get** request is made, and will show the invalid message as **Get** request is detected
             ![GetRejected](get_rejected.png)
-                - After entering the url again, a **get** request is made, and will show the invalid message as **Get** request is detected
