@@ -123,7 +123,7 @@
 - Correct Submission:
     ![Correct_Input](correct_input.png)
     ![Get_Request](get_request.png)
-    ==> **Get Request**
+    ==> **Get Request**: all the data from a form is **displayed up inside of the URL**
 
 - Pass _form variables_ to other routes
     - Create new route
@@ -145,3 +145,35 @@
         <h2>{{ code }}</h2>
         ```
     ![New_Route](new_route.png)
+
+- Get vs Post request
+    - **Get request**: all the data are displayed inside the URL
+    - **Post request**: take all the information, not displaying in the URL. Instead, we can have access to it inside app.pie file
+        - add _method="post"_ keyword in the form tag of home.html
+            ```html
+            <form action="your-url" method="post">
+                <label for="url">Website URL</label>
+                ...
+            </form>
+            ```
+            - This still occurs an error since Falsk's security policy only allows default requests for GET.
+            ![PostError](post_error.png)
+        - add a parameter on Route specfication for **Post**
+            ```python
+            ...
+            @appl.route('/your-url', method=['GET', 'POST'])
+            ```
+        - add codes to handle when GET request is passed + use **_.form_** keyword for **POST**
+            ```python
+            ...
+            @appl.route('/your-url', method=['GET', 'POST'])
+            def your_url():
+                if request.method == 'POST':
+                    return render_template('your_url.html', code=request.form['code'])
+                else:
+                    return 'This is not valid'
+            ```
+            ![PostRequest](post_request.png)
+            Post request is made
+            ![GetRejected](get_rejected.png)
+            After entering the url again, a **get** request is made, and will show the invalid message as **Get** request is detected
