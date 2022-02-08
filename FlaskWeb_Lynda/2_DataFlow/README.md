@@ -24,7 +24,7 @@
 
 
 ### Saving to a JSON file
-- Saving user input as JSON file
+- Saving user input as JSON file -- 1: save dict to json
     - import json
     ```python
     import ... , json
