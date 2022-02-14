@@ -43,12 +43,12 @@
     ![JSON1](json_file1.png)
 
 - Parsing JSON file for conflicting entries
-    - Import os.path
+    - import os.path
         ```python
         ...
         import os.path
         ```
-    - Load url.json to the current dict if exists
+    - load url.json to the current dict if exists
         ```python
         def shorten():
             ...
@@ -56,10 +56,41 @@
                 with open('url.json') as url_file:
                     urls = json.load(url_file)
         ```
-    - Redirect to homepage if an existing shorten name is passed
+    - redirect to homepage if an existing shorten name is passed
         ```python
         if request.form['code'] in urls.keys():
             return redirect(url_for('home'))
         ```
     ![sameCode](sameCode.png)
     ![redirect_home](redirect_homepage.png)
+
+- Flash message to display
+    - import flash from flask library
+        ```python
+        from flask import ... , flash
+        ```
+    - pass flash to the corresponding template
+        ```python
+        if request.form['code'] in urls.keys():
+            flash('That short name has already been taken. Please select another name.')
+            ...
+        ```
+    - display the passed flash message on the template
+        ```html
+        <!-- use {} for Jinja syntax -->
+        <!-- start a for loop to check flash messages -->
+        {% for message in get_flashed_messages() %}
+
+        <h2>{{ message }}</h2>
+
+        <!-- end the loop -->
+        {% endfor %}
+        ```
+    - set scret_key to protect the message
+        ```python
+        ...
+        app = Flask(__name__)
+        # set random string for secret_key
+        app.secret_key = '124109udaswfjas;ldkfj1424;lsakfdjiji'
+        ```
+    ![Flash_Message](flash_message.png)
