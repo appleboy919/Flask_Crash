@@ -41,3 +41,25 @@
             json.dump(urls, url_file)
     ```
     ![JSON1](json_file1.png)
+
+- Parsing JSON file for conflicting entries
+    - Import os.path
+        ```python
+        ...
+        import os.path
+        ```
+    - Load url.json to the current dict if exists
+        ```python
+        def shorten():
+            ...
+            if os.path.exists('url.json'):
+                with open('url.json') as url_file:
+                    urls = json.load(url_file)
+        ```
+    - Redirect to homepage if an existing shorten name is passed
+        ```python
+        if request.form['code'] in urls.keys():
+            return redirect(url_for('home'))
+        ```
+    ![sameCode](sameCode.png)
+    ![redirect_home](redirect_homepage.png)
