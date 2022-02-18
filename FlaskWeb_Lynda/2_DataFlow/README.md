@@ -94,3 +94,40 @@
         app.secret_key = '124109udaswfjas;ldkfj1424;lsakfdjiji'
         ```
     ![Flash_Message](flash_message.png)
+- File uploads from users
+    - add a new form for file uploads on html
+        ```html
+        <!-- add enctype="multipart/form-data" for file uplads -->
+        <form action="your-url" method="post" enctype="multipart/form-data">
+            <label for="file">File</label>
+            <input type="file" name="file" value="" required>
+            <br>
+            <label for="code">Short Name</label>
+            <input type="text" name="code" value="" required>
+            <br>
+            <input type="submit" value="Shorten">
+        </form>
+        ```
+    - check whether user input is a url or file
+        ```python
+        if 'url' in request.form.keys():
+            # url-input
+            urls[request.form['code']] = {'url':reqeust.form['url']}
+        else:
+            # file-input
+        ```
+    - import secure_filename to ensure safe file from user
+        ```python
+        import ...
+        from werkzeug.utils import secure_filename
+        ...
+            else:
+                # file-input
+                f = request.files['file']
+                full_name = request.form['code'] + secure_filename(f.filename)
+                f.save('DIR/TO/SAVE/' + full_name)
+                urls[reqeust.form['code']] = {'file':full_name}
+        ```
+        ![Upload_File](upload_file.png)
+        ![File_JSON](file_json.png)
+        ![Save_File](file_save.png)
