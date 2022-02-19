@@ -131,3 +131,27 @@
         ![Upload_File](upload_file.png)
         ![File_JSON](file_json.png)
         ![Save_File](file_save.png)
+
+- Variable route to redirect for shortcut
+    - define a new route for string varibles
+        ```python
+        ...
+        @app.route('/<string:code>')
+        # reads the next string-oinput as code
+        ```
+    
+    - create a new function for the variable route
+        ```python
+        @app.route('/<string:code>')
+        def redirect_to_url(code):
+            if os.path.exists('urls.json'):
+                with open('urls.json') as urls_file:
+                    urls = json.load(urls_file)
+                    if code in urls.keys():
+                        # check for the shorten name in the url file
+                        if 'url' in urls[code].keys():
+                            # check whether the passed url is a url type
+                            return redirect(urls[code['url']])
+        ```
+        ![URL_Variable](url_variable1.png)
+        ![URL_Direct_Variable](url_variable_redirect.png)
