@@ -188,3 +188,21 @@
         ```
         ![Random_URL](abort1.png)
         ![Abort_404](abort2.png)
+    
+    - use _errorhandler_ to display custom page
+        - add a error handler on _app.py_
+        ```python
+        # error handler for 404 error
+        @app.errorhandler(404)
+        def pange_not_found(error):
+            # return custom html template with a 404 error code
+            return render_template('page_not_found.html'), 404
+        ```
+        - create a new template for 404 error page
+        ```html
+        <h1>Page Not Found</h1>
+        <p>We couldn't find what you are looking for. Come visit our homepage :)</p>
+        <!-- use Jinja for url_for function -->
+        <p><a href="{{ url_for('home') }}">Home</a></p>
+        ```
+        ![Error_Handler](errorhandler.png)
