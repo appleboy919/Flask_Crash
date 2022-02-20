@@ -151,7 +151,24 @@
                         # check for the shorten name in the url file
                         if 'url' in urls[code].keys():
                             # check whether the passed url is a url type
-                            return redirect(urls[code['url']])
+                            return redirect(urls[code]['url'])
         ```
         ![URL_Variable](url_variable1.png)
         ![URL_Direct_Variable](url_variable_redirect.png)
+    
+- Working with **static fiiles**
+    - create new directory for user-uploaded files
+        ```
+        /static/user_files/
+        ```
+    
+    - redirect urls for static files from users
+        ```python
+        if 'url' in urls[code].keys():
+            return redirect(urls[code]['url'])
+        else:
+            # static file url variables
+            return redirec(url_for('static', filename='user_files/' + urls[code]['file']))
+        ```
+        ![Upload_Staticfile](static_file1.png)
+        ![Staticfile_URL](static_file2.png)
