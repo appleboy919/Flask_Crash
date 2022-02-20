@@ -172,3 +172,19 @@
         ```
         ![Upload_Staticfile](static_file1.png)
         ![Staticfile_URL](static_file2.png)
+
+- Display custom error messages
+    - display _404 Nof Found_ error page using **abort**
+        - _abort_ allows to send special error message
+        ```python
+        import ..., abort
+        ...
+
+        def redirect_to_url(code):
+            if os.path.exists('urls.json'):
+                ...
+            # return 404 error message
+            return abort(404)
+        ```
+        ![Random_URL](abort1.png)
+        ![Abort_404](abort2.png)
