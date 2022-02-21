@@ -50,3 +50,16 @@
         {% endfor %}
         ```
     ![Linked_Session_List](session_link.png)
+
+- Creating JSON APIs
+    - import _jsonify_
+        ```python
+        import ... , jsonify
+        ```
+    - add a new route for json api
+        ```python
+        @app.route('/api')
+        def json_api():
+            return jsonify(list(session.keys()))
+        ```
+    ![JSON_API](json_api.png)
