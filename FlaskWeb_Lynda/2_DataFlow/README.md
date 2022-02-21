@@ -64,6 +64,7 @@
     ![sameCode](sameCode.png)
     ![redirect_home](redirect_homepage.png)
 
+### Display (Flash) Messages
 - Flash message to display
     - import flash from flask library
         ```python
@@ -94,6 +95,8 @@
         app.secret_key = '124109udaswfjas;ldkfj1424;lsakfdjiji'
         ```
     ![Flash_Message](flash_message.png)
+
+### Allow File Uploads
 - File uploads from users
     - add a new form for file uploads on html
         ```html
@@ -132,6 +135,7 @@
         ![File_JSON](file_json.png)
         ![Save_File](file_save.png)
 
+### Variable Route from URL
 - Variable route to redirect for shortcut
     - define a new route for string varibles
         ```python
@@ -140,7 +144,7 @@
         # reads the next string-oinput as code
         ```
     
-    - create a new function for the variable route
+    - create a new route function for the variable route
         ```python
         @app.route('/<string:code>')
         def redirect_to_url(code):
@@ -155,7 +159,8 @@
         ```
         ![URL_Variable](url_variable1.png)
         ![URL_Direct_Variable](url_variable_redirect.png)
-    
+
+### Static Files
 - Working with **static fiiles**
     - create new directory for user-uploaded files
         ```
@@ -173,6 +178,7 @@
         ![Upload_Staticfile](static_file1.png)
         ![Staticfile_URL](static_file2.png)
 
+### Error Handling with **_abort_** and **_errorhandler_**
 - Display custom error messages
     - display _404 Nof Found_ error page using **abort**
         - _abort_ allows to send special error message
