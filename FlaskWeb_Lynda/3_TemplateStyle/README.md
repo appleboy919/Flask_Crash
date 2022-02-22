@@ -63,3 +63,30 @@
             return jsonify(list(session.keys()))
         ```
     ![JSON_API](json_api.png)
+
+### Temnplate Blocks and Base Templates
+- Templates can extend from one another
+- Having **base HTML** can make base components on every single webpage
+- Extending base HTML template
+    - create a new base template
+        ```html
+        <h1>THIS IS BASE</h1>
+
+        {% block main %}
+        {% endblock %}
+        ```
+    - extend base html from home html
+        ```html
+        {% extends 'base.html' %}
+        
+        <!-- start the main block -->
+        {% block main %}
+        <h1>URL Shortener</h1>
+
+        ...
+
+        {% endblock %}
+        ```
+        ![Extend_Base](extend_base1.png)
+
+    
