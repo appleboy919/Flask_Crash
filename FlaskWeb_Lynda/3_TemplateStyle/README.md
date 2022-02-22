@@ -88,5 +88,24 @@
         {% endblock %}
         ```
         ![Extend_Base](extend_base1.png)
+- Use base html for flash messages and titles
+    - add title block and flash message codes in base html
+        ```html
+        <head>
+            <title>{% block title %}{% endblock %}</title>
+        </head>
+        { % for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+        {% endfor %}
+        ```
+    - extend base html and add each block on each html template
+        ```html
+        {% extends 'base.html' %}
 
-    
+        {% block title %}URL for "{{ code }}"{% endblock %}
+
+        {% block main %}
+        ...
+        {% endblock %}
+        ```
+    ![Extend_Base_Title](extend_base2.png)
